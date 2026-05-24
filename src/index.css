@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Cinzel:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Cinzel", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-gold-50: #fbf7e6;
+  --color-gold-100: #f4e9be;
+  --color-gold-200: #e9d58a;
+  --color-gold-300: #dfbe55;
+  --color-gold-400: #d8aa2e;
+  --color-gold-500: #d4af37; /* Metallic Gold Accent */
+  --color-gold-600: #b18f25;
+  --color-gold-700: #896e1a;
+  
+  --color-luxury-bg: #050505;
+  --color-luxury-card: #0f0f0f;
+  --color-luxury-card-hover: #161616;
+}
+
+/* Base resets & custom luxury styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+  color: #eeeeee;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Advanced Cinematic UI utilities */
+.glass-panel {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glass-panel-gold {
+  background: rgba(18, 16, 12, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.gold-glow {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f4e9be 0%, #d4af37 50%, #b18f25 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ambient lighting backdrops */
+.ambient-gold-radial {
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.ambient-wood-radial {
+  background: radial-gradient(circle at 10% 30%, rgba(139, 90, 43, 0.06) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+/* Before / After Slide Controller custom styles */
+.slider-handle-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5), inset 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+/* Custom fine-line scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e9d58a;
+}
+
+/* --------------------------------------------------
+   LIGHT MODE (WHITE MODE) LUXURY STYLES
+   -------------------------------------------------- */
+.light {
+  background-color: #faf9f6 !important;
+  color: #1a1a1a !important;
+}
+
+/* Scrollbars in Light Mode */
+.light ::-webkit-scrollbar-track {
+  background: #faf9f6 !important;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #d4af37 !important;
+}
+
+/* Core background overrides */
+.light section#about-section,
+.light section#services-section,
+.light section#projects-section,
+.light section#calculator-section,
+.light section#booking-section,
+.light footer {
+  background-color: #faf9f6 !important;
+  border-color: #e5e5e0 !important;
+}
+
+.light header {
+  background-color: rgba(250, 249, 246, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Neutral backdrops mapped to luxury white and ivory */
+.light .bg-black,
+.light .bg-[#050505],
+.light .bg-[#090909],
+.light .bg-neutral-950,
+.light .bg-[#161616],
+.light .bg-[#0f0f0f] {
+  background-color: #faf9f6 !important;
+}
+
+/* Card and dialogue box mappings */
+.light .group.bg-neutral-950,
+.light .bg-black.rounded-3xl,
+.light .ambient-gold-radial,
+.light .glass-panel,
+.light .glass-panel-gold {
+  background-color: #ffffff !important;
+  border-color: rgba(212, 175, 55, 0.25) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Form controls and input fields inside light mode */
+.light label {
+  color: #555555 !important;
+}
+.light input,
+.light select,
+.light textarea {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+.light input:focus,
+.light select:focus,
+.light textarea:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Cost presentation outputs card */
+.light .bg-neutral-900 {
+  background-color: #fcfbf9 !important;
+  border-color: #e4e4e0 !important;
+}
+
+/* Title and typography contrast adjustments */
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6,
+.light .text-white {
+  color: #1a1a1a !important;
+}
+
+.light .text-gray-200,
+.light .text-gray-300,
+.light .text-gray-400,
+.light p {
+  color: #4a4a4a !important;
+}
+
+.light .text-gray-500,
+.light .text-neutral-500,
+.light .text-neutral-600 {
+  color: #71717a !important;
+}
+
+/* Ensure timeline line stays highly visible */
+.light .border-l {
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Chatbot dialog card container */
+.light .fixed.bottom-6.right-6 .rounded-2xl {
+  background-color: #ffffff !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1) !important;
+}
+.light .fixed.bottom-6.right-6 .bg-neutral-950 {
+  background-color: #f7f6f2 !important;
+}
+
+/* VIP Button adjustments to remain premium */
+.light .bg-neutral-950.hover\:bg-\[\#d4af37\] {
+  background-color: #ffffff;
+  color: #b18f25;
+}
+.light .bg-[#161616]\/70 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
